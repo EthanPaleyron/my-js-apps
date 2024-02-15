@@ -4,68 +4,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-// 🔴Colors
-$primary: #dedede;
-$secondary: #aaa;
-$link: #0074d9;
-$tel: #01ff70;
-$mail: #2d95f9;
-$error: #ff4136;
-$info: #ffdc00;
-$w: #fff;
-$b: #000;
-
-// 🔴Other-Colors
-// $red: #ff4136;
-// $orange: #ff851b;
-// $yellow: #ffdc00;
-// $olive: #3d9970;
-// $green: #2ecc40;
-// $lime: #01ff70;
-// $aqua: #7fdbff;
-// $tela: #39cccc;
-// $blue: #0074d9;
-// $navy: #001f3f;
-// $purple: #b10dc9;
-// $fuchsia: #f012be;
-// $maroon: #85144b;
-
-// 🔴Texts sizes
-body {
-  font-size: 1rem;
-  font-weight: 600;
-}
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-@include responsive(768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-@include responsive(1040px) {
-  h1 {
-    font-size: 4rem;
-  }
-  h2 {
-    font-size: 2.6rem;
-  }
-}
-
-// 🔴Buttons
-.link {
-  color: $link;
-}
-%button {
-  padding: 0.8rem 1.8rem;
-  border-radius: 3rem;
+.return_menu {
+  font-size: 1.7rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
 }

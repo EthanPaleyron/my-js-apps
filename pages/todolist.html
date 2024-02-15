@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../scss/todolist.scss">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
+  <title>Todo App</title>
+</head>
+
+<body data-theme="light">
+
+  <header>
+    <a class="return_menu" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <!-- TITLE DARK_MODE -->
+    <div class="position_title_create">
+      <div>
+        <h1>TODO</h1>
+        <button class="DarkOrLight">
+        </button>
+      </div>
+
+      <!-- CREATE TODO -->
+      <label for="text" id="createTodo" class="create_todo">
+        <input id="submit" class="checkbox" type="submit" name="submit">
+        <label id="createTodo" class="create" for="submit"><img src="../public/todolist/icon-check.svg"
+            alt="check"></label>
+        <input class="create_title" type="text" name="text" id="inputText" placeholder="Create a new todo…"
+          autocomplete="off">
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <div class="content_todo">
+      <!-- LISTS -->
+      <label for="inputText" id="lists_empty">
+        <h2>Your todo list is empty 🙁</h2>
+      </label>
+      <ul id="listContainer"></ul>
+
+      <!-- FOOTER LIST -->
+      <div class="footer_list">
+        <p><span id="todoCounteur"></span> items left</p>
+        <ul>
+          <li>
+            <input id="all" type="radio" name="radio" id="all" value="all" checked>
+            <label for="all">All</label>
+          </li>
+          <li>
+            <input id="active" type="radio" name="radio" id="active" value="active">
+            <label for="active">Active</label>
+          </li>
+          <li>
+            <input id="completed" type="radio" name="radio" id="completed" value="completed">
+            <label for="completed">Completed</label>
+          </li>
+        </ul>
+        <button class="clear_completed">Clear Completed</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>Drag and drop to reorder list</h2>
+  </footer>
+
+  <script type="module" src="../js/todolist.js"></script>
+</body>
+
+</html>

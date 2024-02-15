@@ -1,0 +1,440 @@
+@import "base";
+@import "design-tokens";
+@import "design-token-todolist";
+
+body {
+  font-family: Josefin Sans;
+  background-color: $body;
+}
+
+%input_none {
+  display: none;
+}
+
+@mixin width_main($w: 37rem) {
+  width: $w;
+}
+
+@mixin height_posts($h: 4rem) {
+  height: $h;
+}
+
+@mixin circle($img: url("../public/todolist/circle.svg")) {
+  margin-right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: $img;
+  background-size: 1.4rem;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+header {
+  color: $w;
+  user-select: none;
+  height: 45vh;
+  padding-top: 5rem;
+  background-image: url("../public/todolist/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // TITLE DARK_MODE
+  .position_title_create {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    div {
+      letter-spacing: $letter-spacing;
+      @include width_main;
+      margin-bottom: 2.7rem;
+      display: flex;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .DarkOrLight {
+        width: 2rem;
+        height: 2rem;
+        background-image: url("../public/todolist/icon-moon.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    // CREATE TODO
+    .create_todo {
+      @include width_main;
+      @include height_posts;
+      padding: 1rem $paddingX;
+      background-color: $w;
+      border-radius: $radius;
+      box-shadow: $shadow;
+      display: flex;
+      align-items: center;
+
+      .checkbox {
+        display: none;
+      }
+
+      .create {
+        @include circle;
+
+        &:hover {
+          @include circle(url("../public/todolist/circle-hover.svg"));
+        }
+
+        &:hover > img {
+          filter: brightness(0) saturate(100%) invert(52%) sepia(40%)
+            saturate(2149%) hue-rotate(82deg) brightness(114%) contrast(128%);
+        }
+
+        img {
+          filter: brightness(0) saturate(100%) invert(65%) sepia(18%)
+            saturate(206%) hue-rotate(198deg) brightness(89%) contrast(90%);
+        }
+      }
+
+      .create_title {
+        color: $bl;
+        font-size: 1rem;
+        height: 5vh;
+        width: 100%;
+        padding: 0 0.3rem;
+        border-style: none;
+        border-radius: $radius;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+main {
+  transform: translateY(-3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $radius;
+
+  .content_todo {
+    @include width_main;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // LISTS
+    #lists_empty {
+      font-size: 1.4rem;
+      user-select: none;
+      width: 100%;
+      @include height_posts;
+      @include width_main;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      background-color: $w;
+      border-bottom: solid 0.1rem $g;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: $w;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+
+      .lists {
+        position: relative;
+        width: 100%;
+        @include height_posts;
+        @include width_main;
+        padding: 1rem $paddingX;
+        border-bottom: solid 0.1rem $g;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "";
+          @include circle;
+        }
+
+        &:hover::before {
+          @include circle(url("../public/todolist/circle-hover.svg"));
+        }
+
+        .clear {
+          position: absolute;
+          right: 1.2rem;
+          background: url("../public/todolist/icon-cross.svg") no-repeat;
+          background-size: cover;
+          display: none;
+          width: 1rem;
+          height: 1rem;
+          align-items: center;
+          user-select: none;
+          cursor: pointer;
+        }
+
+        &:hover > .clear {
+          display: flex;
+        }
+      }
+
+      .checked {
+        color: $g;
+        text-decoration: line-through;
+
+        &::before {
+          content: "";
+          @include circle(url("../public/todolist/circle-checked.svg"));
+        }
+
+        &:hover::before {
+          @include circle(url("../public/todolist/circle-checked.svg"));
+        }
+      }
+    }
+
+    // FOOTER LIST
+    .footer_list {
+      position: relative;
+      color: $g;
+      user-select: none;
+      width: 100%;
+      @include height_posts(3rem);
+      padding: 0 $paddingX;
+      background-color: $w;
+      border-bottom-left-radius: $radius;
+      border-bottom-right-radius: $radius;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-right: 2rem;
+        font-size: $min_txt;
+      }
+
+      ul {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4%;
+
+        li {
+          input {
+            @extend %input_none;
+
+            &:checked ~ label {
+              color: $blue;
+            }
+          }
+
+          label {
+            font-weight: bold;
+            padding: 0.3rem;
+
+            &:hover {
+              color: $b;
+            }
+          }
+        }
+      }
+
+      .clear_completed {
+        font-size: $min_txt;
+
+        &:hover {
+          color: $b;
+        }
+
+        &:active {
+          color: $r;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+footer {
+  margin-bottom: 3rem;
+  color: $g;
+  font-size: 0.6rem;
+  text-align: center;
+  user-select: none;
+}
+
+@media screen and (max-width: 650px) {
+  header {
+    .position_title_create {
+      // TITLE DARK_MODE
+      div {
+        @include width_main(20.5rem);
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .DarkOrLight {
+          width: 1.7rem;
+          height: 1.7rem;
+        }
+      }
+
+      // CREATE TODO
+      .create_todo {
+        @include width_main(20.5rem);
+        @include height_posts(3.5rem);
+
+        .create_title {
+          width: 90%;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  main {
+    margin-bottom: 2.5rem;
+
+    // LISTS
+    .content_todo {
+      @include width_main(20.5rem);
+
+      #lists_empty {
+        font-size: 1rem;
+        width: 100%;
+        @include height_posts(3.5rem);
+      }
+
+      ul {
+        width: 100%;
+
+        .lists {
+          width: 100%;
+          @include height_posts(3.5rem);
+
+          .clear {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    // FOOTER LIST
+    .footer_list {
+      position: relative;
+      padding-top: 1rem;
+
+      ul {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        @include width_main(20.5rem);
+        @include height_posts(3rem);
+        background-color: $w;
+        border-radius: $radius;
+        box-shadow: $shadow;
+      }
+
+      .clear_completed {
+        position: absolute;
+        right: 1.2rem;
+      }
+    }
+  }
+}
+
+// DARK MODE
+body[data-theme="dark"] {
+  background-color: $dBody;
+
+  .create_todo {
+    background-color: $dListAndCreate;
+
+    .create {
+      @include circle(url("../public/todolist/circle-dark.svg"));
+
+      &:hover {
+        @include circle(url("../public/todolist/circle-hover-dark.svg"));
+      }
+    }
+
+    .create_title {
+      color: $dText;
+      background-color: $dListAndCreate;
+    }
+  }
+
+  #lists_empty {
+    color: $dText;
+    background-color: $dListAndCreate;
+  }
+
+  ul {
+    .lists {
+      color: $dText;
+      background-color: $dListAndCreate;
+
+      &::before {
+        @include circle(url("../public/todolist/circle-dark.svg"));
+      }
+
+      &:hover::before {
+        @include circle(url("../public/todolist/circle-hover-dark.svg"));
+      }
+    }
+
+    .checked {
+      color: $g;
+
+      &::before {
+        @include circle(url("../public/todolist/circle-checked.svg"));
+      }
+
+      &:hover::before {
+        @include circle(url("../public/todolist/circle-checked.svg"));
+      }
+    }
+  }
+
+  .footer_list {
+    color: $txtDarkFooterList;
+    background-color: $dListAndCreate;
+
+    ul {
+      background-color: $dListAndCreate;
+
+      li label:hover {
+        color: $w;
+      }
+    }
+
+    .clear_completed:hover {
+      color: $w;
+    }
+
+    .clear_completed:active {
+      color: $r;
+    }
+  }
+
+  footer {
+    color: $txtDarkFooterList;
+  }
+}

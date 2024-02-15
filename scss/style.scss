@@ -3,18 +3,53 @@
 @import "design-tokens";
 
 body {
-  min-height: 100vh;
+  color: #fff;
+  background-color: #314a60;
+}
+
+header {
+  margin: 2.5rem 0 6rem;
+  text-align: center;
+}
+
+.menu_apps article {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  article {
+    position: relative;
+    width: 22rem;
+    height: 20rem;
+    background-color: #fff;
+    border-radius: 0.7rem;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.7rem;
+    }
+    &:hover > a > div {
+      display: flex;
+    }
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      font-size: 2rem;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.7rem;
+    }
+  }
 }
 
-h1 {
-  @extend %absolute-center;
-  background: gradient(red, blue, 90deg);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-footer {
-  flex: 1;
+.return_menu {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }

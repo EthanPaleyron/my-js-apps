@@ -16,6 +16,14 @@ const myProjects = [
   },
 ];
 
+myProjects.sort((a, b) => {
+  const titleA = a.title.toLowerCase();
+  const titleB = b.title.toLowerCase();
+  if (titleA < titleB) return -1;
+  if (titleA > titleB) return 1;
+  return 0;
+});
+
 myProjects.forEach((myProject) => {
   document.querySelector("article").innerHTML += `
   <article><a href="pages/${myProject.link}">

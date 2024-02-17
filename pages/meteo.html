@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../scss/meteo.scss">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
+  <title>Meteo</title>
+</head>
+
+<body>
+  <a class="return_menu" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+  <h1>Meteo</h1>
+
+  <form>
+    <label for="searchCity">City:</label>
+    <input type="text" name="text" placeholder="Search for a city" id="searchCity" autocomplete="off" value="Lyon">
+    <button id="submit">Submit</button>
+  </form>
+
+  <div id="city"></div>
+
+  <main>
+    <h2>In which city would you like to know the weather?</h2>
+  </main>
+
+  <script type="module" src="../js/meteo.js"></script>
+</body>
+
+</html>

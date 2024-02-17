@@ -8,25 +8,28 @@ body {
 }
 
 header {
-  margin: 2.5rem 0 6rem;
+  margin: 3.5rem 0 6rem;
   text-align: center;
+  text-decoration: underline;
+  font-size: 2rem;
 }
 
 .menu_apps article {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 6rem 4rem;
   article {
     position: relative;
-    width: 22rem;
-    height: 20rem;
+    text-align: center;
+    width: 22.5rem;
+    height: 18rem;
     background-color: #fff;
-    border-radius: 0.7rem;
+    border-radius: 1rem;
     img {
       width: 100%;
       height: 100%;
-      border-radius: 0.7rem;
+      border-radius: 1rem;
     }
     &:hover > a > div {
       display: flex;
@@ -43,13 +46,7 @@ header {
       display: none;
       justify-content: center;
       align-items: center;
-      border-radius: 0.7rem;
+      border-radius: 1rem;
     }
   }
-}
-
-.return_menu {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
 }

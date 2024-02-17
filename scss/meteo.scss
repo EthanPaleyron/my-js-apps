@@ -1,0 +1,76 @@
+@import "base";
+@import "design-tokens";
+@import "design-tokens-meteo";
+
+body {
+  margin: 0 1.5rem;
+  color: $w;
+  height: 100vh;
+  overflow: hidden;
+  // background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  background: url("../public/meteo/nuages.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1 {
+  margin: 3.5rem 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+form {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  label {
+    font-size: 1.5rem;
+  }
+  input {
+    color: $b;
+    margin: 0 0.7rem;
+    padding: 0.5rem;
+    border: solid 2px;
+    border-radius: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    color: $w;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: $blue;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+}
+
+h2 {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  .card {
+    line-height: 1.5rem;
+    text-align: center;
+    width: 12rem;
+    height: 15rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid 1px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/scss/video-player.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
+    <title>Video Player</title>
+</head>
+
+<body>
+    <a class="return_menu_b" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <h1>Video Player</h1>
+
+    <main>
+        <div class="video">
+            <img src="../public/video-player/banner.jpg" id="banner" alt="banner">
+            <video>
+                <source src="../public/video-player/myVideo.mp4" type="video/mp4">
+                la vidéo ne se charge pas cause de votre navigateur
+            </video>
+
+            <nav>
+                <input type="range" id="progressBar">
+                <div class="content_nav">
+                    <ul>
+                        <li><button id="playPause"><i id="iconPlayPause" class="fa-solid fa-play"></i></button></li>
+                        <li><button id="volume"><i id="iconVolume" class="fa-solid fa-volume-high"></i></button></li>
+                        <li><input id="volumeRange" type="range" name="range" value="50"></li>
+                        <li>
+                            <p><span id="videoTime">0:00</span> / <span id="totalVideoTime">0:00</span></p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="../public/video-player/myVideo.mp4" download><i
+                                    class="fa-solid fa-download"></i></a></li>
+                        <li>
+                            <label for="speedVideo">Speed :</label>
+                            <select id="speedVideo">
+                                <option value="0.25">0.25</option>
+                                <option value="0.50">0.50</option>
+                                <option value="0.75">0.75</option>
+                                <option value="1" selected>Normal</option>
+                                <option value="1.25">1.25</option>
+                                <option value="1.50">1.50</option>
+                                <option value="1.75">1.75</option>
+                                <option value="2">2</option>
+                            </select>
+                        </li>
+                        <li><button id="restart"><i class="fa-solid fa-arrow-rotate-left"></i></button></li>
+                    </ul>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </main>
+
+    <script type="module" src="/js/video-player.js"></script>
+</body>
+
+</html>

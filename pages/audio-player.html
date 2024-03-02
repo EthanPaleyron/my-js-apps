@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Audio player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/scss/audio-player.scss">
+    <script src="https://kit.fontawesome.com/2621df78fc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <a class="return_menu_w" href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+
+    <h1>Audio player</h1>
+
+    <main>
+        <div class="audio">
+            <audio>
+                <source id="audioSrc" type="audio/mpeg">
+            </audio>
+            <img id="image">
+            <nav class="audio__nav">
+                <div class="audio__nav__title_autor">
+                    <cite id="title"></cite>
+                    <p id="author"></p>
+                </div>
+                <div class="audio__nav__time">
+                    <p id="currentTime">0:00</p>
+                    <p id="timeTotal">0:00</p>
+                </div>
+                <input type="range" id="progressBar">
+                <div class="audio__nav__lists">
+                    <ul>
+                        <li><button id="past" title="Past"><i class="fa-solid fa-backward-step"></i></button></li>
+                        <li><button id="playPause" title="Play"><i class="fa-solid fa-play"></i></button></li>
+                        <li><button id="next" title="Next"><i class="fa-solid fa-forward-step"></i></button></li>
+                    </ul>
+                    <ul>
+                        <li><button id="volume" title="Muted"><i class="fa-solid fa-volume-high"></i></button><input
+                                id="volumeRange" type="range" name="range" value="15"></li>
+                        <li><button id="loop" title="Looped"><i class="fa-solid fa-repeat"></i></button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <script type="module" src="/js/audio-player.js"></script>
+</body>
+
+</html>

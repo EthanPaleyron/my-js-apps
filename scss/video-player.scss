@@ -1,0 +1,93 @@
+@import "base";
+@import "styles";
+@import "design-tokens";
+@import "design-token-video-player";
+
+body {
+  background: url("../public/video-player//bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+input:in-range {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 4rem 0;
+  text-align: center;
+  text-decoration: underline;
+}
+
+main {
+  color: $w;
+  display: flex;
+  justify-content: center;
+  .video {
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    video,
+    img {
+      width: 60rem;
+      border-radius: 0.5rem;
+    }
+    img {
+      z-index: 1;
+      position: absolute;
+    }
+    video {
+      position: relative;
+    }
+  }
+
+  nav {
+    z-index: 2;
+    position: absolute;
+    bottom: 0.25rem;
+    width: 100%;
+    background-color: $ba;
+    padding: 0.5rem 1rem 1rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.7rem;
+    cursor: default;
+    input {
+      width: 100%;
+    }
+    .content_nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+      input {
+        width: 5rem;
+      }
+      #speedVideo {
+        color: $b;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.3rem 0.5rem;
+        border-radius: 1rem;
+        option {
+          font-weight: bold;
+          i {
+            filter: brightness(0) saturate(100%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 @import "base";
+@import "styles";
 @import "design-tokens";
 @import "design-token-todolist";
 
 body {
-  font-family: Josefin Sans;
   background-color: $body;
 }
 

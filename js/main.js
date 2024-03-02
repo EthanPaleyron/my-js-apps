@@ -14,6 +14,16 @@ const myProjects = [
     file: "meteo.png",
     link: "meteo.html",
   },
+  {
+    title: "Audio Player",
+    file: "audio-player.png",
+    link: "audio-player.html",
+  },
+  {
+    title: "Video Player",
+    file: "video-player.png",
+    link: "video-player.html",
+  },
 ];
 
 myProjects.sort((a, b) => {

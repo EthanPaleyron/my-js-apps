@@ -4,9 +4,20 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.return_menu {
+%return_menu {
   font-size: 1.7rem;
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
+}
+
+.return_menu_b {
+  filter: brightness(0) saturate(100%);
+  @extend %return_menu;
+}
+
+.return_menu_w {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(15deg) brightness(107%) contrast(100%);
+  @extend %return_menu;
 }
